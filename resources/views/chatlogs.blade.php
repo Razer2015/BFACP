@@ -67,7 +67,7 @@
                             <h3 class="box-title">&nbsp;</h3>
                         </div>
                         <div class="box-tools">
-                            {!! $chat->appends(\Illuminate\Support\Facades\Input::except('page'))->links() !!}
+                            {!! $chat->appends(\Illuminate\Support\Facades\Input::except('page'))->setPath(url()->current())->links() !!}
                         </div>
                     </div>
                     <div class="box-body">
@@ -155,7 +155,7 @@
 
                     <div class="box-footer">
                         <div class="pull-right">
-                            {!! $chat->appends(\Illuminate\Support\Facades\Input::except('page'))->links() !!}
+                            {!! $chat->appends(\Illuminate\Support\Facades\Input::except('page'))->setPath(url()->current())->links() !!}
                         </div>
                     </div>
                 </div>

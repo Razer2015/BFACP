@@ -41,7 +41,9 @@ class AppSettingsServiceProvider extends ServiceProvider
              * @var array
              */
             $this->options = $cache->remember('site.options', 15, function () use ($format) {
-                Log::info('Fetching application settings from database.');
+				if (env('APP_DEBUG')) {
+					Log::info('Fetching application settings from database.');
+				}
 
                 $settings = Option::all();
 
@@ -54,7 +56,9 @@ class AppSettingsServiceProvider extends ServiceProvider
                     }
 
                     if (is_bool($v) && ! is_null($v)) {
-                        Log::debug(sprintf('Setting type for "%s" is "%s".', $option->option_key, gettype($v)));
+						if (env('APP_DEBUG')) {
+							Log::debug(sprintf('Setting type for "%s" is "%s".', $option->option_key, gettype($v)));
+						}
                         $format($this->options, $optionKey, $v);
                     } else {
                         if ($option->option_key == 'site.languages') {

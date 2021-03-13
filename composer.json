@@ -29,7 +29,7 @@
   "require": {
     "php": "5.6.1",
     "laravel/framework": "5.2.*",
-    "lavary/laravel-menu": "dev-master",
+    "lavary/laravel-menu": "1.7.*",
     "zizaco/entrust": "5.2.x-dev",
     "davejamesmiller/laravel-breadcrumbs": "^3.0",
     "roumen/feed": "~2.10",

@@ -147,3 +147,64 @@ php artisan bfacp:reseed
 ```
 
 You should be good to go now. Make sure that you update the subdomain to point to the `public` folder for its directory (not a redirect). If you wish to update to the latest version of this branch just do a `git pull`.
+
+## Docker guide
+
+### Installation
+
+1. Install [docker](https://docs.docker.com/engine/installation/) and [docker-compose](https://docs.docker.com/compose/install/) ;
+
+2. Copy `docker-compose.yml` file to your project root path, and edit it according to your needs ;
+
+3. From your project directory, start up your application by running:
+
+```sh
+docker-compose up
+```
+4. If you want, you can run composer or artisan through docker. For instance:
+
+```sh
+docker-compose exec php composer install --no-scripts
+docker-compose exec php php artisan migrate
+```
+
+5. Assign roles
+
+If you are updating from a version that didn't have **bfacp_user_role** table. You'll now be greeted with the **Undefined offset: 0** error after login. It's because the new roles table doesn't have any roles assigned for your user.
+
+Go and edit the **bfacp_user_role** database manually and assign a role for yourself.
+
+After you have done that, you can assign other user roles from the panel.
+
+6. Permissions
+```bash
+cd /path/to/bfacp
+chmod -R 0777 storage
+chmod -R 0777 public/js/builds
+```
+
+7. Add permissions for chat
+
+```sql
+-- Insert missing permissions when updating from below 2.1 version
+INSERT IGNORE INTO `bfacp_permissions` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
+  (39, 'admin.site.pusher.users.view', 'Allowed to see online users', NOW(), NOW()),
+  (40, 'admin.site.pusher.chat.view', 'Allowed to see site chat', NOW(), NOW()),
+  (41, 'admin.site.pusher.chat.talk', 'Allowed to send messages on site chat', NOW(), NOW());
+
+-- Link missing permissions to administrator when updating from below 2.1 version
+INSERT INTO `bfacp_permission_role` (`permission_id`, `role_id`) 
+SELECT 39, 1 FROM DUAL 
+WHERE NOT EXISTS (SELECT * FROM `bfacp_permission_role` 
+      WHERE `permission_id` = 39 AND `role_id` = 1 LIMIT 1);
+      
+INSERT INTO `bfacp_permission_role` (`permission_id`, `role_id`) 
+SELECT 40, 1 FROM DUAL 
+WHERE NOT EXISTS (SELECT * FROM `bfacp_permission_role` 
+      WHERE `permission_id` = 40 AND `role_id` = 1 LIMIT 1);
+      
+INSERT INTO `bfacp_permission_role` (`permission_id`, `role_id`) 
+SELECT 41, 1 FROM DUAL 
+WHERE NOT EXISTS (SELECT * FROM `bfacp_permission_role` 
+      WHERE `permission_id` = 41 AND `role_id` = 1 LIMIT 1);
+```

@@ -23,7 +23,7 @@ class Secure
      */
     public function handle($request, Closure $next)
     {
-        if (! $request->secure() && app()->environment('production')) {
+        if (!env('APP_REVERSE_PROXY', false) && !$request->secure() && app()->environment('production')) {
             return redirect()->secure($request->getRequestUri(), 301);
         }
 

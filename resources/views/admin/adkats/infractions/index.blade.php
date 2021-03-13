@@ -55,7 +55,7 @@
 
                 <div class="box-footer clearfix">
                     <div class="pull-left">Total: <span ng-bind="{{ $infractions->total() }} | number"></span></div>
-                    <div class="pull-right">{!! $infractions->appends(\Illuminate\Support\Facades\Input::except('page'))->links() !!}</div>
+                    <div class="pull-right">{!! $infractions->appends(\Illuminate\Support\Facades\Input::except('page'))->setPath(url()->current())->links() !!}</div>
                 </div>
             </div>
         </div>
