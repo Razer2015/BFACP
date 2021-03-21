@@ -35,6 +35,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         CheckForMaintenanceMode::class,
+		PermList::class,
     ];
 
     /**
