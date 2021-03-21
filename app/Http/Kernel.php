@@ -11,6 +11,7 @@ use BFACP\Http\Middleware\RedirectIfAuthenticated;
 use BFACP\Http\Middleware\Secure;
 use BFACP\Http\Middleware\VerifyCsrfToken;
 use BFACP\Http\Middleware\ViewableChatlogs;
+use BFACP\Http\Middleware\PermList;
 use Illuminate\Auth\Middleware\AuthenticateWithBasicAuth;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
