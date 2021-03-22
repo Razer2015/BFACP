@@ -1,0 +1,190 @@
+.skin-blue .main-header .navbar {
+    background-color: #002f4a;
+}
+
+.skin-blue .main-header .logo {
+    background-color: #0c1921;
+}
+
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #0c0c0c;
+}
+
+.info-box {
+    background: #1b1b1b;
+}
+
+.box {
+  background: #000;
+ /*background: #0e0e0e;*/
+}
+
+.box-header {
+    color: #ccc;
+}
+
+.box-body {
+    padding-top: 24px;
+}
+
+.box-footer {
+    background-color: #282828;
+}
+
+.slimScrollDiv {
+    min-height: 310px!important;
+}
+
+.scoreboard-chat {
+    min-height: 310px!important;
+}
+
+.badge {
+    color: #000;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li.header, .navbar-nav > .messages-menu > .dropdown-menu > li.header, .navbar-nav > .tasks-menu > .dropdown-menu > li.header {
+    background-color: #000000;
+    color: #d6d6d6;
+}
+
+.navbar-nav > .notifications-menu > .dropdown-menu > li .menu > li > a:hover, .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a:hover, .navbar-nav > .tasks-menu > .dropdown-menu > li .menu > li > a:hover {
+    background: #171717;
+}
+
+.content-wrapper {
+ background-color: #0e0e0e;
+}
+
+.main-footer {
+    background: #000;
+}
+
+.form-control {
+    color: #888888;
+    background-color: #282828;
+    height: 35px;
+}
+
+.box .overlay, .overlay-wrapper .overlay {
+    background: rgba(64, 64, 64, 0.7);
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #adafae;
+    color: #0c0c0c;
+}
+
+/* NAV TABS */
+.nav-tabs-custom {
+    background: #101010;
+}
+
+.nav-tabs-custom > .nav-tabs > li > a {
+    color: #bfbfbf;
+}
+
+.nav-tabs-custom > .tab-content {
+    background: #282828;
+}
+
+.nav-tabs-custom > .nav-tabs > li.active > a,
+.nav-tabs-custom > .nav-tabs > li.active:hover > a {
+  background-color: #000;
+  color: #f2f2f2;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #282828 inset !important;
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+    -webkit-text-fill-color: #888888 !important;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer {
+    background-color: #151515;
+    padding: 10px;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > .user-footer .btn-default {
+    color: #dedede;
+}
+
+/* Darker Daterange Picker */
+
+.daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date {
+  background-color: transparent;
+  color: rgba(200,200,200,0.5);
+}
+.daterangepicker {
+  background-color: inherit;
+  color: #ebf4f0;
+}
+
+.daterangepicker .calendar-table {
+  background-color: transparent;
+}
+
+.datepicker.dropdown-menu table  {
+  background-color: transparent;
+}
+
+.daterangepicker td.in-range {
+  background-color: rgba(37,47,57,0.9);
+  color: #ebf4f8;
+}
+.btn-success {
+  color: #fff;
+  background-color: inherit;
+  border-color: rgba(5,150,1,0.8);
+}
+.btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled.focus, .btn-success[disabled].focus, fieldset[disabled] .btn-success.focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active {
+  color: #fff;
+  background-color: inherit;
+  border-color: rgba(5,150,1,0.1);
+}
+.btn-default {
+  color: #fff;
+  background-color: inherit;
+  border-color: rgba(255,255,255,0.6);
+}
+.daterangepicker select {
+  color: rgba(37,47,57,0.9);
+}
+.daterangepicker .input-mini {
+  color: #ebf4f8;
+}
+
+.daterangepicker .ranges li {
+    background: #1b1b1b;
+}
+
+.daterangepicker .ranges li:hover {
+    background-color: #000;
+}
+
+.daterangepicker .calendar-table .next span, .daterangepicker .calendar-table .prev span {
+    border-top-color: white;
+    border-right-color: white;
+    border-bottom-color: white;
+    border-left-color: white;
+}
+
+.daterangepicker td.in-range.active {
+    background-color: #357ebd;
+}
+
+/* Other fixes */
+.btn-default:hover, .btn-default:active, .btn-default.hover {
+    background-color: #272727;
+}
+
+.box .overlay > .fa, .overlay-wrapper .overlay > .fa {
+    color: #fff;
+}

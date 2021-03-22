@@ -104,7 +104,7 @@
 
 @section('scripts')
     <script type="text/javascript">
-        $('input').iCheck({
+        $('input#personal').iCheck({
             checkboxClass: 'icheckbox_flat-blue',
             radioClass: 'iradio_flat-blue'
         });
