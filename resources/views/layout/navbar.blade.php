@@ -1,5 +1,22 @@
 <div class="navbar-custom-menu">
     <ul class="nav navbar-nav" id="site-navbar">
+	    {{-- Day/Night Toggle, nicked from docs.docker.com --}}
+		<li>
+			<div class="toggle-mode">
+				<div class="icon">
+					<i class="fa fa-sun-o" aria-hidden="true"></i>
+				</div>
+				<div class="toggle-switch">
+					<label class="switch">
+						<input type="checkbox" id="switch-style" @if (Cookie::get('theme') == 'night') checked @endif>
+						<span class="slider round"></span>
+					</label>
+				</div>
+				<div class="icon">
+					<i class="fa fa-moon-o" aria-hidden="true"></i>
+				</div>
+			</div>
+        </li>
         {{-- Reports Menu --}}
         @if($bfacp->isLoggedIn && Auth::user()->ability(null, 'admin.adkats.reports.view'))
             <li class="dropdown messages-menu" ng-include="'js/templates/latestreports.html'" ng-controller="ReportsController" onload="latestReports()"></li>

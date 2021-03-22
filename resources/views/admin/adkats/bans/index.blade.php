@@ -8,7 +8,7 @@
                     <h3 class="box-title">&nbsp;</h3>
                     <div class="box-tools">
                         <div class="pull-right">
-                            {!! Former::text('player')->placeholder(trans('common.nav.extras.psearch.placeholder')) !!}
+                            {!! Former::text('playerSearch')->placeholder(trans('common.nav.extras.psearch.placeholder')) !!}
                         </div>
                         <div class="pull-left" style="padding-right: 20px">
                             <div class="checkbox">
@@ -121,7 +121,7 @@
             }
         });
 
-        $('#player').bind('blur keyup', function (e) {
+        $('#playerSearch').bind('blur keyup', function (e) {
             if (e.type == 'blur' || e.keyCode == '13') {
                 var val = $(this).val();
 

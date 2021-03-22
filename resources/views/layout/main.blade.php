@@ -16,12 +16,18 @@
     {!! Html::style('css/custom.css?v=1') !!}
     {!! Html::style('css/iCheck/all.css') !!}
     {!! Html::style('css/daterangepicker/daterangepicker-bs3.css') !!}
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     {!! Html::style('css/timepicker/bootstrap-timepicker.min.css') !!}
     {!! Html::style('css/animate.css') !!}
     {!! Html::style('css/ng-table/ng-table.min.css') !!}
+    @if (Cookie::get('theme') == 'night')
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/3.4.1/cyborg/bootstrap.min.css">
+        {!! Html::style('css/xdark.css') !!}
+    @endif
+	{!! Html::style('css/theme.css') !!}
     @yield('styles')
     @yield('header-scripts')
-            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -29,7 +35,7 @@
     <![endif]-->
 </head>
 
-<body class="skin-blue sidebar-mini fixed">
+<body class="skin-blue sidebar-mini fixed @if (Cookie::get('theme') == 'night') night @endif">
 <div class="wrapper">
     <header class="main-header">
 
@@ -208,6 +214,7 @@
 {!! Html::script('js/plugins/howler/howler.min.js') !!}
 {!! Html::script('js/plugins/slimScroll/jquery.slimscroll.min.js') !!}
 {!! Html::script('js/boot.js?v=1') !!}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 @if($bfacp->isLoggedIn && $bfacp->user->ability(null, ['admin.site.pusher.users.view', 'admin.site.pusher.chat.view']) && ! empty(env('PUSHER_KEY')))
     <script type="text/javascript">
         var pusher = new Pusher('{{ env('PUSHER_KEY') }}', {
@@ -252,6 +259,26 @@
             noData: "No data available."
         }
     });
+	
+    const themeSwitch = $("#switch-style");
+    themeSwitch.on("change", function () {
+        toggleTheme();
+    });
+
+    function toggleTheme() {
+        setCookie("theme", themeSwitch.is(":checked") ? "night" : "day", 365 * 99);
+        location.reload();
+    }
+
+    function setCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
 </script>
 @yield('scripts')
 </body>

@@ -8,3 +8,5 @@ sftp-config.json
 /.c9
 /Fuse
 docker-compose.yml
+docker-compose.staging.yml
+docker-compose.prod.yml

@@ -165,7 +165,6 @@
 @stop
 
 @section('scripts')
-    {!! Html::script('js/plugins/daterangepicker/daterangepicker.js') !!}
     <script type="text/javascript">
         function updateDateRangeDisplay(date1, date2) {
             $('#date-range span').html(moment(date1).format('LLL') + '&nbsp;&ndash;&nbsp;' + moment(date2).format('LLL'));

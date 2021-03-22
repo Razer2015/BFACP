@@ -108,7 +108,6 @@
 @stop
 
 @section('scripts')
-    {!! Html::script('js/plugins/daterangepicker/daterangepicker.js') !!}
     <script type="text/javascript">
         $(function () {
             $('input').iCheck({

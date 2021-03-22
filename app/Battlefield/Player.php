@@ -286,21 +286,21 @@ class Player extends Elegant
 
         // Battlelog URL
         if (is_null($this->battlelog)) {
-            $links['battlelog'] = sprintf('http://battlelog.battlefield.com/%s/user/%s', strtolower($game),
+            $links['battlelog'] = sprintf('https://battlelog.battlefield.com/%s/user/%s', strtolower($game),
                 $this->SoldierName);
         } else {
             if ($game == 'BFH') {
-                $links['battlelog'] = sprintf('http://battlelog.battlefield.com/%s/agent/%s/stats/%u/pc/',
+                $links['battlelog'] = sprintf('https://battlelog.battlefield.com/%s/agent/%s/stats/%u/pc/',
                     strtolower($game), $this->SoldierName, $this->battlelog->persona_id);
             } else {
-                $links['battlelog'] = sprintf('http://battlelog.battlefield.com/%s/soldier/%s/stats/%u/pc/',
+                $links['battlelog'] = sprintf('https://battlelog.battlefield.com/%s/soldier/%s/stats/%u/pc/',
                     strtolower($game), $this->SoldierName, $this->battlelog->persona_id);
             }
         }
 
         $links[] = [
             'chatlogs' => route('chatlog.search', ['pid' => $this->PlayerID]),
-            'pbbans'   => ! empty($this->PBGUID) ? sprintf('http://www.pbbans.com/mbi-guid-search-%s.html',
+            'pbbans'   => ! empty($this->PBGUID) ? sprintf('https://www.pbbans.com/mbi-guid-search-%s.html',
                 $this->PBGUID) : null,
             'fairplay' => sprintf('https://www.247fairplay.com/CheatDetector/%s', $this->SoldierName),
         ];
@@ -309,8 +309,8 @@ class Player extends Elegant
 
         if ($game == 'BF4') {
             $links2 = [
-                'aci' => sprintf('http://www.anticheatinc.net/forums/bansearch.php?search=%s&game=bf4&submit=Submit', $this->PBGUID),
-                'cheatreport' => sprintf('http://bf4cr.com/?pid=&uid=%s&cnt=&startdate=', $this->SoldierName),
+                'aci' => sprintf('https://www.anticheatinc.net/forums/bansearch.php?search=%s&game=bf4&submit=Submit', $this->PBGUID),
+                'cheatreport' => sprintf('https://bf4cr.com/?pid=&uid=%s&cnt=&startdate=', $this->SoldierName),
                 'bf4db' => sprintf('https://bf4db.com/player/search?query=%s', $this->SoldierName),
                 'ba' => sprintf('https://battlefield.agency/player/by-pb_guid/%s', $this->PBGUID),
             ];

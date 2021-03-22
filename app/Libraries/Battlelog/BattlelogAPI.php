@@ -13,7 +13,7 @@ class BattlelogAPI
     /**
      * Battlelog Base URL.
      */
-    const BLOG = 'http://battlelog.battlefield.com/';
+    const BLOG = 'https://battlelog.battlefield.com/';
 
     /**
      * Guzzle Client.

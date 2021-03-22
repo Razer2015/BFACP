@@ -207,4 +207,9 @@ INSERT INTO `bfacp_permission_role` (`permission_id`, `role_id`)
 SELECT 41, 1 FROM DUAL 
 WHERE NOT EXISTS (SELECT * FROM `bfacp_permission_role` 
       WHERE `permission_id` = 41 AND `role_id` = 1 LIMIT 1);
+
+-- Assign roles again (because roles table has changed)
+INSERT IGNORE INTO bfacp_user_role (user_id, role_id)
+SELECT user_id, role_id
+FROM bfacp_assigned_roles
 ```

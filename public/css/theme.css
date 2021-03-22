@@ -1,0 +1,76 @@
+/*
+* Theme switch styles, nicked from docs.docker.com
+*/
+.toggle-mode .fa {
+    color: white;
+}
+
+.toggle-mode {
+	margin-top: 10px;
+    float: left;
+    padding: 0 0 0 10px;
+    width: 100%;
+}
+
+.toggle-mode .icon {
+    width: 25px;
+    float: left;
+    font-size: 1.5rem;
+	margin-top: 2px;
+}
+
+.toggle-switch {
+    float: left;
+    height: 40px;
+    width: 60px;
+    padding: 3px 7px 0 2px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 47px;
+    height: 19px
+}
+
+.switch input {
+    display: none
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #c5e1f7;
+    border: 1px solid #c3e4f7
+}
+
+.slider:before {
+    background-color: #2697ed;
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 2px;
+    bottom: 1px
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    transform: translateX(26px)
+}
+
+.slider.round {
+    border-radius: 34px
+}
+
+.slider.round:before {
+    border-radius: 50%
+}
